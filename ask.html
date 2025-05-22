@@ -29,6 +29,14 @@
             margin-bottom: 2rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             animation: pulse 2s infinite;
+        }  
+        
+        h2 {
+            color: #ff005d;
+            
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
         }
 
         .buttons {
@@ -173,6 +181,7 @@
     </audio>
     <div class="container">
         <h1>Do you love me? 💖</h1>
+        <h2></h2>
         <div class="buttons">
             <button class="btn btn-yes" id="yesBtn">Yes! 😍</button>
             <button class="btn btn-no" id="noBtn">No No😢</button>
@@ -223,6 +232,9 @@
             document.querySelector('h1').style.animation = 'none';
             document.querySelector('h1').style.transform = 'scale(1.2)';
             
+            document.querySelector('h2').textContent = 'Hae Bolso Kintu..🤭🤭';
+            document.querySelector('h2').style.animation = 'none';
+            document.querySelector('h2').style.transform = 'scale(1.2)';
             // Create heart burst
             heartBurst.style.display = 'block';
             createHeartBurst();

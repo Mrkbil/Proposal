@@ -33,7 +33,6 @@
         
         h2 {
             color: #ff005d;
-            
             margin-bottom: 2rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             animation: pulse 2s infinite;
@@ -43,6 +42,7 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            position: relative; /* Added this */
         }
 
         .btn {
@@ -182,7 +182,7 @@
     <div class="container">
         <h1>Do you love me? 💖</h1>
         <h2></h2>
-        <div class="buttons">
+        <div class="buttons" id="buttonsContainer">
             <button class="btn btn-yes" id="yesBtn">Yes! 😍</button>
             <button class="btn btn-no" id="noBtn">No No😢</button>
         </div>
@@ -193,6 +193,7 @@
     <script>
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
+        const buttonsContainer = document.getElementById('buttonsContainer');
         const heartBurst = document.getElementById('heartBurst');
         const emojis = ['❤️', '💖', '💗', '💘', '💙', '💚', '💛', '🧡', '💜', '🤍', '🤎', 
                        '💕', '💞', '💓', '💝', '💟', '❣️', '💌', '🥰', '😍', '😘', '😻'];
@@ -224,8 +225,8 @@
         // Yes button click effect - heart burst
         yesBtn.addEventListener('click', function() {
               document.getElementById('backgroundMusic').play();
-            // Hide original buttons
-            document.querySelector('.buttons').style.display = 'none';
+            // Hide buttons container
+            buttonsContainer.style.display = 'none';
             
             // Change title
             document.querySelector('h1').textContent = 'I love you too! 💕';
@@ -235,6 +236,7 @@
             document.querySelector('h2').textContent = 'Hae Bolso Kintu..🤭🤭';
             document.querySelector('h2').style.animation = 'none';
             document.querySelector('h2').style.transform = 'scale(1.2)';
+            
             // Create heart burst
             heartBurst.style.display = 'block';
             createHeartBurst();
